@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    SuperheroesApp()
                 }
             }
         }
@@ -30,17 +30,24 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun SuperheroesApp() {
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        text = "Hello!"
     )
 }
 
-@Preview(showBackground = true)
+@Preview
 @Composable
-fun GreetingPreview() {
-    SuperheroesTheme {
-        Greeting("Android")
+fun SuperheroesPreview() {
+    SuperheroesTheme(darkTheme = false) {
+        SuperheroesApp()
+    }
+}
+
+@Preview
+@Composable
+fun SuperheroesDarkThemePreview() {
+    SuperheroesTheme(darkTheme = true) {
+        SuperheroesApp()
     }
 }
